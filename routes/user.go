@@ -35,7 +35,6 @@ func CreateUser(c *fiber.Ctx) error {
 func GetUsers(c *fiber.Ctx) error {
 	users := []models.User{}
 
-	// atribui à variável users acima os users encontrados
 	database.Database.Db.Find(&users)
 
 	responseUsers := []User{}
