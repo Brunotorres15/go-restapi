@@ -40,7 +40,7 @@ func CreateOrder(c *fiber.Ctx) error {
 		return c.Status(400).JSON(err.Error())
 	}
 
-	// cria a order
+	// cria a order no banco
 	database.Database.Db.Create(&order)
 
 	// serialização para usar no return
