@@ -43,7 +43,7 @@ func CreateOrder(c *fiber.Ctx) error {
 	// cria a order no banco
 	database.Database.Db.Create(&order)
 
-	// serialização para usar no return
+	// serialização para retornar apenas as informações necessárias para o frontend
 	responseUser := CreateResponseUser(user)
 	responseProduct := CreateResponseProduct(product)
 	responseOrder := CreateResponseOrder(order, responseUser, responseProduct)
